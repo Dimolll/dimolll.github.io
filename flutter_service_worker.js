@@ -3,19 +3,19 @@ const MANIFEST = 'flutter-app-manifest';
 const TEMP = 'flutter-temp-cache';
 const CACHE_NAME = 'flutter-app-cache';
 const RESOURCES = {
-  "version.json": "426313f2f3133c2f20415344c4a22df3",
-"index.html": "807f23398599bca01e0422053e1faaf8",
-"/": "807f23398599bca01e0422053e1faaf8",
-"main.dart.js": "e6228e6cb447dfd08c8fe6b61244ea92",
+  "version.json": "009c9e65172e010890f7f65fde438006",
+"index.html": "9abaa0c7ad6af580be52ea116c99dc36",
+"/": "9abaa0c7ad6af580be52ea116c99dc36",
+"main.dart.js": "480589201a9d7bfa33298baa1bd8591f",
 "favicon.png": "5dcef449791fa27946b3d35ad8803796",
 "icons/Icon-192.png": "ac9a721a12bbc803b44f645561ecb1e1",
 "icons/Icon-512.png": "96e752610906ba2a93c65f8abe1645f1",
 "manifest.json": "a83bbbd9d23ea4d752fbcd44cdc544fa",
 "assets/AssetManifest.json": "204a94f53621a17c0ce774242e61adc4",
-"assets/NOTICES": "8bb2485959e8d8a2ca1da8253195db82",
+"assets/NOTICES": "54a2fed3c8f8c741d2332bac81be175f",
 "assets/FontManifest.json": "af72817180f1600c6ad8d83aa72f0a98",
 "assets/packages/cupertino_icons/assets/CupertinoIcons.ttf": "6d342eb68f170c97609e9da345464e5e",
-"assets/fonts/MaterialIcons-Regular.otf": "1288c9e28052e028aba623321f7826ac",
+"assets/fonts/MaterialIcons-Regular.otf": "7e7a6cccddf6d7b20012a548461d5d81",
 "assets/assets/workytime/logo.png": "d7a8032f6ba0f3e40a4ecff3f00277a9",
 "assets/assets/workytime/4.png": "9030f5fc7b07f2abc0947ce6ea63d810",
 "assets/assets/workytime/5.png": "cb09dadb4d85b9ddc573e2c27030918c",
@@ -64,7 +64,11 @@ const RESOURCES = {
 "assets/assets/dropasapp/2.png": "65211e62ae7b9d393514c65c333c0d32",
 "assets/assets/dropasapp/3.png": "2a0f9532f7beff4e1bc571fae00eea00",
 "assets/assets/dropasapp/1.png": "32d0aad5e2f7551626358915f3824ba3",
-"assets/assets/dropasapp/0.png": "66fa2fe7398baf383a5f36a07df68b3b"
+"assets/assets/dropasapp/0.png": "66fa2fe7398baf383a5f36a07df68b3b",
+"canvaskit/canvaskit.js": "c2b4e5f3d7a3d82aed024e7249a78487",
+"canvaskit/profiling/canvaskit.js": "ae2949af4efc61d28a4a80fffa1db900",
+"canvaskit/profiling/canvaskit.wasm": "95e736ab31147d1b2c7b25f11d4c32cd",
+"canvaskit/canvaskit.wasm": "4b83d89d9fecbea8ca46f2f760c5a9ba"
 };
 
 // The application shell files that are downloaded before a service worker can
@@ -82,7 +86,7 @@ self.addEventListener("install", (event) => {
   return event.waitUntil(
     caches.open(TEMP).then((cache) => {
       return cache.addAll(
-        CORE.map((value) => new Request(value + '?revision=' + RESOURCES[value], {'cache': 'reload'})));
+        CORE.map((value) => new Request(value, {'cache': 'reload'})));
     })
   );
 });
